@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+<body>
+
+    <h1>Ejercicios básicos</h1>
+    <p>1. Número aleatorio entre 0 y 10 (sin incluir el 10)</p>
+
+    <p id="ej1"></p>
+
+    <script>
+        let num = Math.floor(Math.random()*10);
+        document.getElementById("ej1").innerHTML=num;
+    </script>
+
+    <p>2. Número aleatorio entre 1 y 10 (ambos inclusive)</p>
+
+    <p id="ej2"></p>
+
+    <script>
+        let num_ej2 = Math.floor(Math.random()*10) + 1;
+        document.getElementById("ej2").innerHTML=num_ej2;
+    </script>
+
+    <p>3. Número aleatorio entre un mínimo y un máximo (ambos inclusive)</p>
+
+    <p id="ej3"></p>
+
+    <script>
+        let num_ej3 = Math.floor(Math.random() * (15 - 5 + 1) + 5);
+        document.getElementById("ej3").innerHTML= num_ej3;
+    </script>
+
+    <h1>Ejercicios avanzados</h1>
+    <p>4. Simular el lanzamiento de un dado</p>
+
+    <p id="ej4"></p>
+
+    <script>
+        let num_dado = Math.floor(Math.random() * (6 - 1 + 1) + 1);
+        document.getElementById("ej4").innerHTML="El numero del dado es: " + num_dado;
+    </script>
+
+
+    <p>5. Obtener una letra aleatoria de una cadena</p>
+
+    <label for="letra_cadena">Inserte una cadena de texto</label>
+    <input type="text" id="letra_cadena">
+
+    <p id="ej5"></p>
+
+    <script>
+        function recoger_cadena() {
+            return document.getElementById("letra_cadena").value;
+        }
+        cadena=recoger_cadena().replaceAll(" ", "");
+        let indice_aleatorio = Math.floor(Math.random() * cadena.length);
+        document.getElementById("ej5").innerHTML=cadena[indice_aleatorio];
+    </script>
+</body>
+</html>
